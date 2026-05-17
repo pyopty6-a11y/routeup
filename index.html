@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="RouteUp – Plan and share your routes" />
+  <title>RouteUp</title>
+
+  <!--
+    Tailwind CSS CDN runtime (browser build).
+    For offline / self-hosted use, replace with:  <script src="tailwind.js"></script>
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style type="text/tailwindcss">
+    @layer base {
+      :focus-visible {
+        outline: 3px solid #2563eb;
+        outline-offset: 2px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+
+  <!--
+    ACCESSIBILITY FEATURES INCLUDED:
+    - Skip-to-main-content link (keyboard / screen-reader users)
+    - Semantic landmarks: <header role="banner">, <main>, <nav>, <footer role="contentinfo">
+    - aria-label on every <nav>
+    - Labelled headings (aria-labelledby) on every <section>
+    - role="list" on every <ul> used for navigation or card grids
+    - aria-hidden="true" on all decorative SVGs / emoji
+    - Descriptive alt text (role="img" + aria-label) on decorative divs
+    - Correct heading hierarchy: h1 → h2 → h3
+    - Sufficient colour contrast (Tailwind blue-700 on white ≥ 4.5:1)
+    - focus-visible outline via @layer base above
+  -->
+
+  <!-- Skip link ─────────────────────────────────────────────── -->
+  <a
+    href="#main-content"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-0 focus:left-0 focus:z-50
+           focus:bg-blue-700 focus:text-white focus:px-4 focus:py-3
+           focus:text-sm focus:font-semibold focus:shadow-lg focus:rounded-br-lg"
+  >
+    Skip to main content
+  </a>
+
+  <!-- Header / Nav ──────────────────────────────────────────── -->
+  <header class="bg-white border-b border-gray-200 shadow-sm" role="banner">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
+
+      <a href="/" aria-label="RouteUp – go to homepage"
+         class="flex items-center gap-2 text-blue-700 font-bold text-xl">
+        <svg aria-hidden="true" focusable="false" class="w-6 h-6"
+             fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round"
+                d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0
+                   011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553
+                   2.276A1 1 0 0021 18.382V7.618a1 1 0
+                   00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        </svg>
+        RouteUp
+      </a>
+
+      <nav aria-label="Primary navigation">
+        <ul role="list" class="flex items-center gap-6 text-sm font-medium">
+          <li><a href="#plan"    class="hover:text-blue-700 transition-colors">Plan</a></li>
+          <li><a href="#explore" class="hover:text-blue-700 transition-colors">Explore</a></li>
+          <li><a href="#about"   class="hover:text-blue-700 transition-colors">About</a></li>
+          <li>
+            <a href="#get-started"
+               class="bg-blue-700 text-white px-4 py-2 rounded-lg text-sm
+                      font-semibold hover:bg-blue-800 transition-colors">
+              Get started
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content ──────────────────────────────────────────── -->
+  <main id="main-content" role="main" class="flex-1">
+
+    <!-- Hero -->
+    <section aria-labelledby="hero-heading"
+             class="bg-gradient-to-br from-blue-700 to-indigo-800 text-white py-20 px-4">
+      <div class="max-w-3xl mx-auto text-center">
+        <h1 id="hero-heading"
+            class="text-4xl sm:text-5xl font-extrabold tracking-tight mb-4">
+          Route smarter. Go further.
+        </h1>
+        <p class="text-lg sm:text-xl text-blue-100 mb-8 max-w-xl mx-auto">
+          RouteUp helps you plan, optimise, and share routes for cycling,
+          hiking, driving — whatever moves you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#plan" id="get-started"
+             class="bg-white text-blue-700 font-bold px-8 py-3 rounded-xl
+                    shadow hover:bg-blue-50 transition-colors">
+            Plan a route
+          </a>
+          <a href="#explore"
+             class="border border-white text-white font-semibold px-8 py-3
+                    rounded-xl hover:bg-white hover:text-blue-700 transition-colors">
+            Browse routes
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section aria-labelledby="features-heading" id="plan"
+             class="py-16 px-4 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <h2 id="features-heading"
+            class="text-2xl sm:text-3xl font-bold text-center mb-12">
+          Everything you need to get going
+        </h2>
+        <ul role="list" class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+
+          <li class="flex flex-col items-start gap-3 p-6 rounded-2xl bg-blue-50">
+            <span aria-hidden="true" class="text-3xl">🗺️</span>
+            <h3 class="font-bold text-lg">Smart planning</h3>
+            <p class="text-gray-600 text-sm">
+              Draw your route on an interactive map, set waypoints, and let
+              RouteUp optimise the path.
+            </p>
+          </li>
+
+          <li class="flex flex-col items-start gap-3 p-6 rounded-2xl bg-indigo-50">
+            <span aria-hidden="true" class="text-3xl">📡</span>
+            <h3 class="font-bold text-lg">Real-time updates</h3>
+            <p class="text-gray-600 text-sm">
+              Live traffic, weather overlays, and elevation data keep you
+              informed every step of the way.
+            </p>
+          </li>
+
+          <li class="flex flex-col items-start gap-3 p-6 rounded-2xl bg-green-50">
+            <span aria-hidden="true" class="text-3xl">🤝</span>
+            <h3 class="font-bold text-lg">Share &amp; collaborate</h3>
+            <p class="text-gray-600 text-sm">
+              Share routes with a link, export to GPX/KML, or collaborate
+              with friends in real time.
+            </p>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- Explore -->
+    <section aria-labelledby="explore-heading" id="explore"
+             class="py-16 px-4 bg-gray-50">
+      <div class="max-w-5xl mx-auto">
+        <h2 id="explore-heading"
+            class="text-2xl sm:text-3xl font-bold text-center mb-4">
+          Explore popular routes
+        </h2>
+        <p class="text-center text-gray-500 mb-10">
+          Discover routes curated by the RouteUp community.
+        </p>
+
+        <ul role="list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          <li class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="bg-gradient-to-br from-green-400 to-teal-500 h-32"
+                 role="img" aria-label="Coastal Walk route preview map">
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold">Coastal Walk</h3>
+              <p class="text-sm text-gray-500 mt-1">12 km · Easy · Scenic</p>
+              <a href="#"
+                 class="mt-3 inline-block text-sm text-blue-700 font-semibold hover:underline">
+                View route →
+              </a>
+            </div>
+          </li>
+
+          <li class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="bg-gradient-to-br from-orange-400 to-red-500 h-32"
+                 role="img" aria-label="Mountain Trail route preview map">
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold">Mountain Trail</h3>
+              <p class="text-sm text-gray-500 mt-1">24 km · Hard · 800 m elevation</p>
+              <a href="#"
+                 class="mt-3 inline-block text-sm text-blue-700 font-semibold hover:underline">
+                View route →
+              </a>
+            </div>
+          </li>
+
+          <li class="bg-white rounded-2xl shadow-sm overflow-hidden border border-gray-100">
+            <div class="bg-gradient-to-br from-purple-400 to-indigo-500 h-32"
+                 role="img" aria-label="City Cycle Loop route preview map">
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold">City Cycle Loop</h3>
+              <p class="text-sm text-gray-500 mt-1">18 km · Moderate · Urban</p>
+              <a href="#"
+                 class="mt-3 inline-block text-sm text-blue-700 font-semibold hover:underline">
+                View route →
+              </a>
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section aria-labelledby="about-heading" id="about"
+             class="py-16 px-4 bg-white">
+      <div class="max-w-2xl mx-auto text-center">
+        <h2 id="about-heading" class="text-2xl sm:text-3xl font-bold mb-4">
+          Built for every adventurer
+        </h2>
+        <p class="text-gray-600 leading-relaxed">
+          RouteUp is an open project. Whether you're commuting, trail running,
+          or planning a cross-country trip, we believe great tools should be
+          fast, accessible, and free.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer ────────────────────────────────────────────────── -->
+  <footer role="contentinfo"
+          class="bg-gray-900 text-gray-400 py-8 px-4 text-sm">
+    <div class="max-w-5xl mx-auto flex flex-col sm:flex-row
+                items-center justify-between gap-4">
+      <p>© <span id="year"></span> RouteUp. Open source, built with ❤️</p>
+      <nav aria-label="Footer navigation">
+        <ul role="list" class="flex gap-4">
+          <li><a href="#" class="hover:text-white transition-colors">Privacy</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Terms</a></li>
+          <li>
+            <a href="https://github.com/pyopty6-a11y/routeup"
+               class="hover:text-white transition-colors">
+              GitHub
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
